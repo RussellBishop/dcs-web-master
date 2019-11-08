@@ -1,0 +1,3 @@
+AllowOverride All
+RewriteEngine On
+RewriteRule   article-container-units.php   container-units
