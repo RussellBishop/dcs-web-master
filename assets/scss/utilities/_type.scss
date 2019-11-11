@@ -1,4 +1,3 @@
-
 @each $value in (capitalize, lowercase, uppercase) {
   @include make-utility((
     alias: $value,
@@ -7,9 +6,22 @@
   ));
 }
 
-@each $value in (left, center, right) {
+@each $name, $value in ($type-font-families) {
   @include make-utility((
-    text-align: $value
+    font-family: #{unquote($value)},
+  ));
+}
+
+@each $value in ($type-aligns) {
+  @include make-utility((
+    text-align: #{$value},
+    class: true
+  ));
+}
+
+@each $value in ($type-weights) {
+  @include make-utility((
+    font-weight: #{$value},
   ));
 }
 
@@ -17,3 +29,29 @@
   alias: underline,
   text-decoration: underline
 ));
+
+@each $set in ('heading', 'body') {
+  @for $i from 1 through 4 {
+    %u-font-#{$set}-size-#{$i} {
+      $sizes: map-get($type-sizes, #{$set}-size-#{$i});
+
+      @include breakpoint('upto-tablet') {
+        font-size: first($sizes);
+      }
+
+      @include breakpoint('from-tablet') {
+        font-size: last($sizes);
+      }
+    }
+
+    .u-font-#{$set}-size-#{$i} {
+      @extend %u-font-#{$set}-size-#{$i};
+    }
+  }
+}
+
+.o-heading-size-4 {
+  @extend 
+  %u-font-heading-size-4,
+  ;
+}

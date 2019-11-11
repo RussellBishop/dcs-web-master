@@ -1,0 +1,33 @@
+$brand-type-families: (
+  'vw-head': "'VW Head', Arial, sans-serif",
+  'vw-text': "'VW Text', Arial, sans-serif",
+);
+
+$type-font-families: (
+  'heading': #{map-get($brand-type-families, 'vw-head')},
+  'body': #{map-get($brand-type-families, 'vw-text')},
+);
+
+$type-sizes: (
+  'heading-size-4': (26px, 35px),
+  'heading-size-3': (24px, 32px),
+  'heading-size-2': (22px, 27px),
+  'heading-size-1': (20px, 22px),
+
+  'body-size-4': (18px, 18px),
+  'body-size-3': (16px, 16px),
+  'body-size-2': (14px, 14px),
+  'body-size-1': (12px, 12px),
+);
+
+$type-weights: (
+  'bold',
+  'regular',
+  'light',
+);
+
+$type-aligns: (
+  'left',
+  'center',
+  'right',
+);

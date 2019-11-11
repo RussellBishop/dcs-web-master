@@ -1,8 +1,13 @@
-
-@each $key, $value in ($auto-colors) {
+@each $key, $value in ($main-colors) {
   @include make-utility((
     alias: 'bgcolor-' + $key,
-    class: true,
+    background-color: $value
+  ));
+}
+
+@each $key, $value in ($ui-colors) {
+  @include make-utility((
+    alias: 'bgcolor-' + $key,
     background-color: $value
   ));
 }

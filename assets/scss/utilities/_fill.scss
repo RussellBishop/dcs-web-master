@@ -1,0 +1,13 @@
+@each $key, $value in ($icon-colors) {
+  @include make-utility((
+    alias: 'fill-' + $key,
+    fill: $value
+  ));
+}
+
+@each $key, $value in ($marker-colors) {
+  @include make-utility((
+    alias: 'fill-' + $key,
+    fill: $value
+  ));
+}

@@ -1,0 +1,11 @@
+.c-tariff {
+  @extend 
+  %u-bgcolor-ui-lightest;
+
+  &__title {
+    @extend 
+    %u-font-heading-size-4,
+    %u-font-weight-bold,
+    %u-color-text-primary;
+  }
+}

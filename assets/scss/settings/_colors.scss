@@ -1,15 +1,75 @@
+/*
+  Brand - namespaced
+  Found in Abstract as "OEM - Brand / Brand Colours"
+*/
 
-// Global color variables
+$brand-colors: (
+  'vw-primary-white000': #ffffff,
+  'vw-primary-black000': #000000,
+  'vw-primary-blue200': #00B0F0,
+  'vw-primary-blue600': #001E50,
 
-$color-white: #FFFFFF;
-$color-black: #000000;
+  'vw-secondary-grey100': #DFE4E8,
+  'vw-secondary-grey200': #C2CACF,
+  'vw-secondary-grey300': #96A3A8,
+  'vw-secondary-grey400': #6A767D,
+  'vw-secondary-grey500': #3C484D,
+  'vw-secondary-blue500': #00437A,
 
+  'vw-signal-red200': #E4002C,
+  'vw-signal-green200': #029640,
+  'vw-signal-yellow000': #FFD100,
+  'vw-signal-mint100': #00E6E6,
+  'vw-signal-purple100': #5B08A4,
 
-// Colors used to automatically generate font and background color utilities.
+  'vw-hover-blue100': #4CC7F4,
+  'vw-hover-blue900': #0040C5,
+  'vw-hover-red100': #FF335C,
+  'vw-hover-green100': #ADE5A1,
+);
 
-$auto-colors: (
-  'white': $color-white,
-  'black': $color-black,
-  'transparent': transparent,
-  'currentColor': currentColor
+// Web contextualising Brand colours
+ 
+$main-colors: (
+  'main-primary': map-get($brand-colors, 'vw-primary-blue600'),
+  'main-secondary': map-get($brand-colors, 'vw-secondary-blue500'),
+  'main-tertiary': map-get($brand-colors, 'vw-secondary-grey100'),
+  'main-success': map-get($brand-colors, 'vw-signal-green200'),
+  'main-success-light': mix(map-get($brand-colors, 'vw-primary-white000'), map-get($brand-colors, 'vw-signal-green200'), 80%),
+  'main-error': map-get($brand-colors, 'vw-signal-red200'),
+  'main-error-light': mix(map-get($brand-colors, 'vw-primary-white000'), map-get($brand-colors, 'vw-signal-red200'), 80%),
+  'main-pending': map-get($brand-colors, 'vw-signal-yellow000'),
+  'main-favourite': map-get($brand-colors, 'vw-hover-red100'),
+);
+  
+$text-colors: (
+  'text-primary': map-get($brand-colors, 'vw-primary-black000'),
+  'text-secondary': map-get($main-colors, 'main-primary'),
+  'text-tertiary': map-get($brand-colors, 'vw-secondary-grey300'),
+  'text-quartenary': map-get($brand-colors, 'vw-primary-white000'),
+  'text-success': map-get($main-colors, 'main-success'),
+  'text-error': map-get($main-colors, 'main-error'),
+);
+
+$ui-colors: (
+  'ui-light': map-get($brand-colors, 'vw-secondary-grey100'),
+  'ui-lightest': mix(map-get($brand-colors, 'vw-primary-white000'), map-get($brand-colors, 'vw-secondary-grey100'), 80%),
+  'ui-dark': map-get($brand-colors, 'vw-secondary-grey200'),
+  'ui-darkest': map-get($brand-colors, 'vw-secondary-grey300'),
+);
+
+$icon-colors: (
+  'icon-primary': map-get($main-colors, 'main-primary'),
+  'icon-hover': map-get($main-colors, 'main-secondary'),
+  'icon-success': map-get($main-colors, 'main-success'),
+  'icon-error': map-get($main-colors, 'main-error'),
+  'icon-inactive': map-get($main-colors, 'main-tertiary'),
+);
+
+$marker-colors: (
+  'marker-primary': map-get($main-colors, 'main-primary'),
+  'marker-available': map-get($main-colors, 'main-success'),
+  'marker-unavailable': map-get($brand-colors, 'vw-primary-grey300'),
+  'marker-current': map-get($brand-colors, 'vw-primary-blue200'),
+  'marker-favourite': map-get($main-colors, 'main-favourite'),
 );
