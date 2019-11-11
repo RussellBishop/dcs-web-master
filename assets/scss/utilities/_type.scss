@@ -6,6 +6,7 @@
   ));
 }
 
+ // NOT WORKING
 @each $name, $value in ($type-font-families) {
   @include make-utility((
     font-family: #{unquote($value)},

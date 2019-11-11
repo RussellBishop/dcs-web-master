@@ -3,6 +3,7 @@ $brand-type-families: (
   'vw-text': "'VW Text', Arial, sans-serif",
 );
 
+// NOT WORKING
 $type-font-families: (
   'heading': #{map-get($brand-type-families, 'vw-head')},
   'body': #{map-get($brand-type-families, 'vw-text')},
