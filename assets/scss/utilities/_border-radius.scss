@@ -1,0 +1,37 @@
+@each $name, $value in $border-radiuses {
+
+  @include make-utility((
+    border-radius: $value,
+    alias: radius-#{$name},
+    // class: true
+  ));
+
+  @include make-utility((
+    border-top-left-radius: $value,
+    border-top-right-radius: $value,
+    alias: radiust-#{$name},
+    // class: true
+  ));
+
+  @include make-utility((
+    border-top-right-radius: $value,
+    border-bottom-right-radius: $value,
+    alias: radiusr-#{$name},
+    // class: true
+  ));
+
+  @include make-utility((
+    border-bottom-right-radius: $value,
+    border-bottom-left-radius: $value,
+    alias: radiusb-#{$name},
+    // class: true
+  ));
+  
+  @include make-utility((
+    border-top-left-radius: $value,
+    border-bottom-left-radius: $value,
+    alias: radiusl-#{$name},
+    // class: true
+  ));
+
+}

@@ -1,24 +1,12 @@
-$brand-type-families: (
+$brand-font-families: (
   'vw-head': "'VW Head', Arial, sans-serif",
   'vw-text': "'VW Text', Arial, sans-serif",
 );
 
-// NOT WORKING
 $type-font-families: (
-  'heading': #{map-get($brand-type-families, 'vw-head')},
-  'body': #{map-get($brand-type-families, 'vw-text')},
-);
-
-$type-sizes: (
-  'heading-size-4': (26px, 35px),
-  'heading-size-3': (24px, 32px),
-  'heading-size-2': (22px, 27px),
-  'heading-size-1': (20px, 22px),
-
-  'body-size-4': (18px, 18px),
-  'body-size-3': (16px, 16px),
-  'body-size-2': (14px, 14px),
-  'body-size-1': (12px, 12px),
+  'hero': #{map-get($brand-font-families, 'vw-head')},
+  'heading': #{map-get($brand-font-families, 'vw-head')},
+  'body': #{map-get($brand-font-families, 'vw-text')},
 );
 
 $type-weights: (
@@ -27,8 +15,39 @@ $type-weights: (
   'light',
 );
 
-$type-aligns: (
+$type-alignments: (
   'left',
   'center',
   'right',
 );
+
+$type-groups: (
+  (
+    family: 'hero',
+    line-height: 1.19,
+    sizes: (
+      'size': (30px, 55px),
+    ),
+  ),
+
+  (
+    family: 'heading',
+    line-height: 1.29,
+    sizes: (
+      'size-4': (26px, 35px),
+      'size-3': (24px, 32px),
+      'size-2': (22px, 27px),
+      'size-1': (20px, 22px),
+    ),
+  ),
+
+  (
+    family: 'body',
+    line-height: 1.375,
+    sizes: (
+      'size-2': (16px, 16px),
+      'size-1': (12px, 12px),
+    ),
+  )
+);
+

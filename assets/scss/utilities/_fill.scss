@@ -8,6 +8,6 @@
 @each $key, $value in ($marker-colors) {
   @include make-utility((
     alias: 'fill-' + $key,
-    fill: $value
+    fill: $value,
   ));
 }

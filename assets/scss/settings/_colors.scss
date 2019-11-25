@@ -69,7 +69,7 @@ $icon-colors: (
 $marker-colors: (
   'marker-primary': map-get($main-colors, 'main-primary'),
   'marker-available': map-get($main-colors, 'main-success'),
-  'marker-unavailable': map-get($brand-colors, 'vw-primary-grey300'),
+  'marker-unavailable': map-get($brand-colors, 'vw-secondary-grey300'),
   'marker-current': map-get($brand-colors, 'vw-primary-blue200'),
   'marker-favourite': map-get($main-colors, 'main-favourite'),
 );

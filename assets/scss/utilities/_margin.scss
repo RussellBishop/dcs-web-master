@@ -1,7 +1,47 @@
+@for $i from 1 through $spacing-max {
 
-@include make-utility((
-  alias: 'mh-auto',
-  class: true,
-  margin-left: auto,
-  margin-right: auto
-));
+  @include make-utility((
+    alias: 'mt-' + $i,
+    margin-top: #{'calc(var(--spacing) * ' + $i + ')'},
+    // class: true,
+  ));
+
+  @include make-utility((
+    alias: 'mr-' + $i,
+    margin-right: #{'calc(var(--spacing) * ' + $i + ')'},
+    // class: true,
+  ));
+
+  @include make-utility((
+    alias: 'mb-' + $i,
+    margin-bottom: #{'calc(var(--spacing) * ' + $i + ')'},
+    // class: true,
+  ));
+
+  @include make-utility((
+    alias: 'ml-' + $i,
+    margin-left: #{'calc(var(--spacing) * ' + $i + ')'},
+    // class: true,
+  ));
+
+  @include make-utility((
+    alias: 'my-' + $i,
+    margin-top: #{'calc(var(--spacing) * ' + $i + ')'},
+    margin-bottom: #{'calc(var(--spacing) * ' + $i + ')'},
+    // class: true,
+  ));
+
+  @include make-utility((
+    alias: 'mx-' + $i,
+    margin-right: #{'calc(var(--spacing) * ' + $i + ')'},
+    margin-left: #{'calc(var(--spacing) * ' + $i + ')'},
+    // class: true,
+  ));
+
+  @include make-utility((
+    alias: 'm-' + $i,
+    margin: #{'calc(var(--spacing) * ' + $i + ')'},
+    // class: true,
+  ));
+  
+}

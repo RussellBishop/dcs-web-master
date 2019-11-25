@@ -6,14 +6,15 @@
   ));
 }
 
- // NOT WORKING
 @each $name, $value in ($type-font-families) {
   @include make-utility((
     font-family: #{unquote($value)},
+    alias: font-family-#{$name},
+    class: true
   ));
 }
 
-@each $value in ($type-aligns) {
+@each $value in ($type-alignments) {
   @include make-utility((
     text-align: #{$value},
     class: true
@@ -31,28 +32,49 @@
   text-decoration: underline
 ));
 
-@each $set in ('heading', 'body') {
-  @for $i from 1 through 4 {
-    %u-font-#{$set}-size-#{$i} {
-      $sizes: map-get($type-sizes, #{$set}-size-#{$i});
+@each $group in $type-groups {
 
+  $group-family: map-get($group, family);
+  $group-sizes: map-get($group, sizes);
+  $group-line-height: map-get($group, line-height);
+
+  %u-line-height-#{$group-family} {
+    line-height: #{$group-line-height};
+  }
+
+  @each $size in $group-sizes {
+    $size-alias: first($size);
+    $size-breakpoints: last($size);
+
+    $size-small: first($size-breakpoints);
+    $size-large: last($size-breakpoints);
+
+    // Make font-size utilities
+    %u-font-size-#{$group-family}-#{$size-alias} {
       @include breakpoint('upto-tablet') {
-        font-size: first($sizes);
+        font-size: $size-small;
       }
 
       @include breakpoint('from-tablet') {
-        font-size: last($sizes);
+        font-size: $size-large;
       }
     }
 
-    .u-font-#{$set}-size-#{$i} {
-      @extend %u-font-#{$set}-size-#{$i};
+    // Make classes of font-size utilities
+    .u-font-size-#{$group-family}-#{$size-alias} {
+      @extend %u-font-size-#{$group-family}-#{$size-alias};
+    }
+    
+    // Make objects with font-families
+    %o-#{$group-family}-#{$size-alias} {
+      @extend 
+        %u-font-family-#{$group-family},
+        %u-font-size-#{$group-family}-#{$size-alias},
+        %u-line-height-#{$group-family};
+    }
+
+    .o-#{$group-family}-#{$size-alias} {
+      @extend %o-#{$group-family}-#{$size-alias};
     }
   }
-}
-
-.o-heading-size-4 {
-  @extend 
-  %u-font-heading-size-4,
-  ;
 }

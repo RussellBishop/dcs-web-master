@@ -1,11 +1,27 @@
 .c-tariff {
   @extend 
+  %u-p-6,
   %u-bgcolor-ui-lightest;
 
   &__title {
     @extend 
-    %u-font-heading-size-4,
+    %o-heading-size-4,
     %u-font-weight-bold,
-    %u-color-text-primary;
+    %u-color-text-primary,
+    %u-text-align-center;
+  }
+
+  &__description {
+    @extend 
+    %u-mt-2,
+    %o-body-size-2,
+    %u-color-text-primary,
+    %u-text-align-center;
+  }
+
+  &__key {
+    @extend 
+    %u-mt-3,
+    %u-color-text-tertiary;
   }
 }

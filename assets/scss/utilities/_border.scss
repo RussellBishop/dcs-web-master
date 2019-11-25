@@ -1,0 +1,49 @@
+@each $name, $value in $borders {
+
+  @include make-utility((
+    border: $value,
+    alias: border-#{$name},
+    // class: true
+  ));
+
+  @include make-utility((
+    border-top: $value,
+    alias: bordert-#{$name},
+    // class: true
+  ));
+
+  @include make-utility((
+    border-right: $value,
+    alias: borderr-#{$name},
+    // class: true
+  ));
+
+  @include make-utility((
+    border-bottom: $value,
+    alias: borderb-#{$name},
+    // class: true
+  ));
+
+  @include make-utility((
+    border-left: $value,
+    alias: borderl-#{$name},
+    // class: true
+  ));
+
+}
+
+@each $key, $value in ($main-colors) {
+  @include make-utility((
+    alias: 'border-color-' + $key,
+    border-color: $value,
+    // class: true
+  ));
+}
+
+@each $key, $value in ($ui-colors) {
+  @include make-utility((
+    alias: 'border-color-' + $key,
+    border-color: $value,
+    // class: true
+  ));
+}

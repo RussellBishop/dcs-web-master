@@ -1,3 +1,6 @@
 body {
-  @include fontScale(14, 22);
+  --spacing: #{$spacing};
+
+  @extend 
+    %o-body-size-2;
 }
